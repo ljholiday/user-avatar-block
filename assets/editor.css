@@ -1,0 +1,104 @@
+/* User Avatar Block Editor Styles */
+
+.wp-block-user-avatar-block .user-avatar-block.preview {
+    border: 2px dashed #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    max-width: 300px;
+}
+
+.wp-block-user-avatar-block .user-avatar-block.preview .user-avatar-trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: default;
+}
+
+.wp-block-user-avatar-block .user-avatar-block.preview .avatar-wrapper img {
+    border-radius: 50%;
+    display: block;
+}
+
+.wp-block-user-avatar-block .user-avatar-block.preview .user-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.wp-block-user-avatar-block .user-avatar-block.preview .dropdown-arrow {
+    color: #666;
+    font-size: 12px;
+}
+
+.wp-block-user-avatar-block .user-avatar-block.preview .dropdown-preview {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.wp-block-user-avatar-block .user-avatar-block.logged-out {
+    padding: 15px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    color: #856404;
+    font-style: italic;
+    max-width: 300px;
+}
+
+/* Alignment styles */
+.wp-block-user-avatar-block.align-left {
+    text-align: left;
+}
+
+.wp-block-user-avatar-block.align-center {
+    text-align: center;
+}
+
+.wp-block-user-avatar-block.align-right {
+    text-align: right;
+}
+
+/* Inspector controls styling */
+.menu-item-control {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f8f9fa;
+    margin-bottom: 12px;
+}
+
+.menu-item-control:last-child {
+    margin-bottom: 0;
+}
+
+/* Components styling improvements */
+.components-panel__body .components-base-control {
+    margin-bottom: 16px;
+}
+
+.components-panel__body .components-base-control:last-child {
+    margin-bottom: 0;
+}
+
+/* Custom button styling */
+.menu-item-control button {
+    min-height: 28px;
+    font-size: 12px;
+}
+
+/* Menu item fields spacing */
+.menu-item-control .components-base-control + .components-base-control {
+    margin-top: 12px;
+}
+
+/* Responsive adjustments for editor */
+@media (max-width: 782px) {
+    .wp-block-user-avatar-block .user-avatar-block.preview {
+        padding: 12px;
+    }
+    
+    .menu-item-control {
+        padding: 10px;
+    }
+}

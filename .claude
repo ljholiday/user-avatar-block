@@ -1,0 +1,35 @@
+# User Avatar Block Plugin - Claude Instructions
+
+## Plugin Overview
+WordPress Gutenberg block that displays logged-in user's avatar with customizable dropdown menu. No build process required - uses vanilla JS and CSS.
+
+## Key Files
+- `user-avatar-block.php` - Main plugin file with block registration and server-side render
+- `assets/editor.js` - Gutenberg editor block JavaScript 
+- `assets/frontend.js` - Frontend dropdown functionality (jQuery-based)
+- `assets/style.css` - Frontend styles with dark mode support
+- `assets/editor.css` - Editor-specific styles
+
+## Common Issues Fixed
+1. **Alignment bug**: PHP output used `align` instead of `align-` prefix to match CSS
+2. **CSS selector mismatch**: Duplicate alignment selectors with different naming
+3. **Avatar fallback**: Editor only checked size 48, now has multiple fallbacks
+
+## Development Notes
+- Block uses server-side rendering (save function returns null)
+- Frontend depends on jQuery - ensure it's loaded
+- Uses WordPress Dashicons for menu icons
+- Responsive design hides username on mobile
+- ARIA-compliant dropdown with keyboard navigation
+
+## Testing
+- Test with logged-in/logged-out users
+- Verify alignment options work correctly
+- Check dropdown functionality and keyboard navigation
+- Test responsive behavior on mobile
+
+## Plugin Structure
+- Namespace: `user-avatar-block/user-avatar`
+- Category: `widgets`
+- Supports: alignment, colors, spacing
+- No build process - direct file editing
