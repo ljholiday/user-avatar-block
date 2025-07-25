@@ -36,7 +36,8 @@
             menuItems = [{ id: 'profile', label: 'My Profile', url: '/wp-admin/profile.php', icon: 'admin-users', type: 'link' }],
             includeLogout = true,
             loggedOutMessage = 'Please log in to see your profile.',
-            alignment = 'left'
+            alignment = 'left',
+            customLoginUrl = ''
         } = attributes;
 
         const blockProps = useBlockProps({
@@ -139,6 +140,12 @@
                     value: loggedOutMessage,
                     onChange: (value) => setAttributes({ loggedOutMessage: value }),
                     help: __('Message shown to users who are not logged in')
+                }),
+                el(TextControl, {
+                    label: __('Custom Login Page URL'),
+                    value: customLoginUrl,
+                    onChange: (value) => setAttributes({ customLoginUrl: value }),
+                    help: __('Custom login page URL (leave blank to use WordPress default)')
                 })
             ),
             showDropdown && el(PanelBody, { title: __('Dropdown Menu Items'), initialOpen: false },
@@ -296,6 +303,10 @@
             alignment: {
                 type: 'string',
                 default: 'left'
+            },
+            customLoginUrl: {
+                type: 'string',
+                default: ''
             }
         },
         edit: Edit,

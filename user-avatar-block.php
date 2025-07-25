@@ -71,6 +71,10 @@ class UserAvatarBlock {
                 'alignment' => array(
                     'type' => 'string',
                     'default' => 'left'
+                ),
+                'customLoginUrl' => array(
+                    'type' => 'string',
+                    'default' => ''
                 )
             ),
             'render_callback' => array($this, 'render_block'),
@@ -118,8 +122,17 @@ class UserAvatarBlock {
         // Don't show anything if user is not logged in
         if (!is_user_logged_in()) {
             $logged_out_message = !empty($attributes['loggedOutMessage']) ? $attributes['loggedOutMessage'] : 'Please log in to see your profile.';
+            
+            // Use custom login URL if provided, otherwise default WordPress login
+            if (!empty($attributes['customLoginUrl'])) {
+                $login_url = $attributes['customLoginUrl'];
+            } else {
+                $login_url = wp_login_url(get_permalink());
+            }
+            
             return '<div class="wp-block-user-avatar-block"><div class="user-avatar-block logged-out">' . 
-                   esc_html($logged_out_message) . 
+                   '<span class="logged-out-message">' . esc_html($logged_out_message) . '</span>' .
+                   '<a href="' . esc_url($login_url) . '" class="login-link">Log In</a>' .
                    '</div></div>';
         }
         
