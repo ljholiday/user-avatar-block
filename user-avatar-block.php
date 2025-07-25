@@ -3,7 +3,7 @@
  * Plugin Name: User Avatar Block
  * Plugin URI: https://your-website.com/user-avatar-block
  * Description: Display logged-in user's avatar with customizable dropdown menu - no build process required!
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Your Name
  * Author URI: https://your-website.com
  * License: GPL v2 or later
@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('USER_AVATAR_BLOCK_VERSION', '1.0.0');
+define('USER_AVATAR_BLOCK_VERSION', '1.0.1');
 define('USER_AVATAR_BLOCK_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('USER_AVATAR_BLOCK_PLUGIN_URL', plugin_dir_url(__FILE__));
 
